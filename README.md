@@ -5,7 +5,7 @@
 실행파일 : [다운로드](https://github.com/jikjky/PowerOptionChange/raw/master/Power.exe)
 
 # 개요
-- 편리하게 전원 옵션을 변경가능(절전,고성능)
+- 편리하게 전원 옵션을 변경가능(절전, 균형, 고성능)
 
 # 특징
 - 트라이아이콘으로 백그라운드 실행
