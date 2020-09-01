@@ -18,3 +18,6 @@
 
 
 
+# 컴퓨터 시작시 
+
+%AppData%\Microsoft\Windows\Start Menu\Programs\Startup
