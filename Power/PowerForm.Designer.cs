@@ -34,13 +34,13 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.고성능ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.절전ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.세팅ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBoxHigh = new System.Windows.Forms.TextBox();
             this.textBoxSave = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.세팅ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonHigh = new System.Windows.Forms.Button();
             this.buttonSavePower = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -86,6 +86,13 @@
             this.절전ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.절전ToolStripMenuItem.Text = "절전";
             this.절전ToolStripMenuItem.Click += new System.EventHandler(this.절전ToolStripMenuItem_Click);
+            // 
+            // 세팅ToolStripMenuItem
+            // 
+            this.세팅ToolStripMenuItem.Name = "세팅ToolStripMenuItem";
+            this.세팅ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.세팅ToolStripMenuItem.Text = "세팅";
+            this.세팅ToolStripMenuItem.Click += new System.EventHandler(this.세팅ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
@@ -136,13 +143,6 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // 세팅ToolStripMenuItem
-            // 
-            this.세팅ToolStripMenuItem.Name = "세팅ToolStripMenuItem";
-            this.세팅ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.세팅ToolStripMenuItem.Text = "세팅";
-            this.세팅ToolStripMenuItem.Click += new System.EventHandler(this.세팅ToolStripMenuItem_Click);
             // 
             // buttonHigh
             // 
