@@ -1,2 +1,2 @@
 # PowerOptionChange
-https://github.com/downloads/jikjky/PowerOptionChange/Power.exe
+https://github.com/jikjky/PowerOptionChange/raw/master/Power.exe
