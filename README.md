@@ -17,7 +17,16 @@
 - 단축키로 전원 옵션 변경
 
 
+![](https://paper-attachments.dropbox.com/s_1C01DDF108D4B3C985AB4AF90946259C94A4A5EB47AFFAEF47EC673CEE89C8A2_1598966890323_image.png)
+
+
+
+![](https://paper-attachments.dropbox.com/s_1C01DDF108D4B3C985AB4AF90946259C94A4A5EB47AFFAEF47EC673CEE89C8A2_1598966905260_image.png)
+
+
 
 # 컴퓨터 시작시 
 
 %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+
+위 경로에 실행파일 또는 바로가기 파일 추가
