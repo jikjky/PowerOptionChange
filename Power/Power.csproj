@@ -73,6 +73,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="power_options_15389.ico" />
+    <EmbeddedResource Include="Resources\power.wav" />
+    <EmbeddedResource Include="Resources\middel.wav" />
+    <EmbeddedResource Include="Resources\low.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
