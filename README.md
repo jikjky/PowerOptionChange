@@ -25,7 +25,7 @@
 
 
 
-# 컴퓨터 시작시 
+# 컴퓨터 시작시 실행  
 
 %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 
