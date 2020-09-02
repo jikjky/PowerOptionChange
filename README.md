@@ -1,6 +1,6 @@
 ![](https://paper-attachments.dropbox.com/s_1C01DDF108D4B3C985AB4AF90946259C94A4A5EB47AFFAEF47EC673CEE89C8A2_1598944801887_image.png)
 
-# PowerOptionChange
+# Power Option Change
 
 실행파일 : [다운로드](https://github.com/jikjky/PowerOptionChange/raw/master/Power.exe)
 
