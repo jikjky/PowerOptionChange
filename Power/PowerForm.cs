@@ -214,7 +214,7 @@ namespace Power
                             }
                         }
                     }
-                    Thread.Sleep(100);
+                    Thread.Sleep(500);
                 }
                 process.Close();
             })
