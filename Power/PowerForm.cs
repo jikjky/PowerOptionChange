@@ -32,6 +32,8 @@ namespace Power
         private string BalancedGuid;
         private string PowerSaverGuid;
 
+        private bool mbThreadExit;
+
         public KeyboardHook keyboardHook = new KeyboardHook();
 
         static RegistryKey highRegistrykey = Registry.CurrentUser.CreateSubKey("Power Setting").CreateSubKey("High Perfomance");
@@ -163,7 +165,7 @@ namespace Power
             process.StartInfo = processInfo;
             new Thread(() =>
             {
-                while (true)
+                while (mbThreadExit == false)
                 {
                     process.Start();
                     process.StandardInput.Write(@"powercfg /L" + Environment.NewLine);
@@ -604,6 +606,11 @@ namespace Power
         private void textBoxBalanced_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = false;
+        }
+
+        private void PowerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mbThreadExit = true;
         }
     }
 }
