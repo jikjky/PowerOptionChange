@@ -217,8 +217,9 @@ namespace Power
                         }
                     }
                     Thread.Sleep(500);
+                    process.Refresh();
                 }
-                process.Close();
+                process.Kill();
             })
             { IsBackground = true }.Start();
         }
