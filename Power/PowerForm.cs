@@ -48,6 +48,8 @@ namespace Power
         RegistryKeyConfig balancedConfig = new RegistryKeyConfig(balancedRegistrykey);
         RegistryKeyConfig saveConfig = new RegistryKeyConfig(saveRegistrykey);
 
+        Process mProcess = new Process();
+
         public class RegistryKeyConfig
         {
             RegistryKey myRegistryKey;
@@ -116,6 +118,21 @@ namespace Power
         public PowerForm()
         {
             InitializeComponent();
+
+            ProcessStartInfo processInfo = new ProcessStartInfo();
+
+            processInfo.FileName = "cmd.exe";
+            processInfo.CreateNoWindow = true;
+
+            processInfo.UseShellExecute = false;
+
+            processInfo.RedirectStandardInput = true;
+            processInfo.RedirectStandardOutput = true;
+            processInfo.RedirectStandardError = true;
+
+            mProcess.StartInfo = processInfo;
+
+
             keyboardHook.KeyDown += new KeyEventHandler(keyboardHook_KeyDown);
             keyboardHook.Start();
             this.ShowInTaskbar = false;
@@ -150,27 +167,14 @@ namespace Power
 
         private void SetWatch()
         {
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            Process process = new Process();
-
-            processInfo.FileName = "cmd.exe";
-            processInfo.CreateNoWindow = true;
-
-            processInfo.UseShellExecute = false;
-
-            processInfo.RedirectStandardInput = true;
-            processInfo.RedirectStandardOutput = true;
-            processInfo.RedirectStandardError = true;
-
-            process.StartInfo = processInfo;
             new Thread(() =>
             {
                 while (mbThreadExit == false)
                 {
-                    process.Start();
-                    process.StandardInput.Write(@"powercfg /L" + Environment.NewLine);
-                    process.StandardInput.Close();
-                    string ouputString = process.StandardOutput.ReadToEnd();
+                    mProcess.Start();
+                    mProcess.StandardInput.Write(@"powercfg /L" + Environment.NewLine);
+                    mProcess.StandardInput.Close();
+                    string ouputString = mProcess.StandardOutput.ReadToEnd();
                     foreach (var line in ouputString.Split('\n'))
                     {
                         if (line.IndexOf("고성능") != -1 || line.IndexOf("High performance") != -1)
@@ -217,83 +221,38 @@ namespace Power
                         }
                     }
                     Thread.Sleep(500);
-                    process.Refresh();
+                    mProcess.Refresh();
                 }
-                process.Kill();
+                mProcess.Kill();
             })
             { IsBackground = true }.Start();
         }
 
         private void SetHighPerfomance()
         {
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            Process process = new Process();
-
-            processInfo.FileName = "cmd.exe";
-            processInfo.CreateNoWindow = true;
-
-            processInfo.UseShellExecute = false;
-
-            processInfo.RedirectStandardInput = true;
-            processInfo.RedirectStandardOutput = true;
-            processInfo.RedirectStandardError = true;
-
-            process.StartInfo = processInfo;
-            process.Start();
-
-            process.StandardInput.Write(@"powercfg /setactive " + HighPerfomanceGuid + Environment.NewLine);
-            process.StandardInput.Close();
-            process.Close();
+            mProcess.Start();
+            mProcess.StandardInput.Write(@"powercfg /setactive " + HighPerfomanceGuid + Environment.NewLine);
+            mProcess.StandardInput.Close();
 
             highPlayer.Play();
         }
 
         private void SetBalancedPerfomance()
         {
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            Process process = new Process();
-
-            processInfo.FileName = "cmd.exe";
-            processInfo.CreateNoWindow = true;
-
-            processInfo.UseShellExecute = false;
-
-            processInfo.RedirectStandardInput = true;
-            processInfo.RedirectStandardOutput = true;
-            processInfo.RedirectStandardError = true;
-
-            process.StartInfo = processInfo;
-            process.Start();
-
-            process.StandardInput.Write(@"powercfg /setactive " + BalancedGuid + Environment.NewLine);
-            process.StandardInput.Close();
-            process.Close();
+            mProcess.Start();
+            mProcess.StandardInput.Write(@"powercfg /setactive " + BalancedGuid + Environment.NewLine);
+            mProcess.StandardInput.Close();
 
             balancedPlayer.Play();
         }
         private void SetPowerSaver()
         {
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            Process process = new Process();
-
-            processInfo.FileName = "cmd.exe";
-            processInfo.CreateNoWindow = true;
-
-            processInfo.UseShellExecute = false;
-
-            processInfo.RedirectStandardInput = true;
-            processInfo.RedirectStandardOutput = true;
-            processInfo.RedirectStandardError = true;
-
-            process.StartInfo = processInfo;
-            process.Start();
-
-            process.StandardInput.Write(@"powercfg /setactive " + PowerSaverGuid + Environment.NewLine);
-            process.StandardInput.Close();
-            process.Close();
+            mProcess.Start();
+            mProcess.StandardInput.Write(@"powercfg /setactive " + PowerSaverGuid + Environment.NewLine);
+            mProcess.StandardInput.Close();
 
             savePlayer.Play();
-        }
+        }                                                                                                                               
 
 
         private void HighPerfomanceToolStripMenuItem_Click(object sender, EventArgs e)
